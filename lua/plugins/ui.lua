@@ -79,7 +79,7 @@ return {
   {
     "nvim-lualine/lualine.nvim",
     enabled = true,
-    dependencies = { "nvim-tree/nvim-web-devicons", "AndreM222/copilot-lualine", "nvimdev/lspsaga.nvim" },
+    dependencies = { "nvim-tree/nvim-web-devicons", "nvimdev/lspsaga.nvim" },
     opts = {},
     config = function()
       require("lualine").setup({
@@ -114,45 +114,13 @@ return {
         sections = {},
         tabline = {},
         winbar = {
-          lualine_a = {
-            -- {
-            --   function()
-            --     local msg = "No Active Lsp"
-            --     local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
-            --     local clients = vim.lsp.get_active_clients()
-            --     if next(clients) == nil then
-            --       return msg
-            --     end
-            --     for _, client in ipairs(clients) do
-            --       local filetypes = client.config.filetypes
-            --       if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-            --         return client.name
-            --       end
-            --     end
-            --     return msg
-            --   end,
-            --   icon = "",
-            --   color = { fg = "#849b04", gui = "bold" },
-            -- },
+          lualine_z = {
+            { "mode", color = { fg = "#9ECE6A" } },
+            { "location", color = { fg = "#F7768E" } },
+            { "progress", color = { fg = "#0db9d7" } },
             { "filetype", icon_only = false, colored = true },
             { "filename", colored = true },
-            {
-              function()
-                local breadcrum = require("lspsaga.symbol.winbar").get_bar()
-                if breadcrum ~= nil then
-                  return breadcrum
-                else
-                  return ""
-                end
-              end,
-            },
-          },
-          lualine_b = {},
-          lualine_c = {},
-          lualine_x = {},
-          lualine_y = {},
-          lualine_z = {
-            { "branch", color = { fg = "#D33682" }, icon = "󰘬" },
+            { "branch", color = { fg = "#BB9AF7" }, icon = "󰘬" },
             {
               "diff",
               colored = true, -- Displays a colored diff status if set to true
@@ -163,9 +131,22 @@ return {
               sources = { "nvim_diagnostic" },
               symbols = { error = " ", warn = " ", info = " " },
             },
-            -- { "mode", color = { fg = "#8dc07c" } },
-            -- { "location", color = { fg = "#d3859b" } },
-            -- { "progress", color = { fg = "#e78a4e" } },
+            -- {
+            --   function()
+            --     local breadcrum = require("lspsaga.symbol.winbar").get_bar()
+            --     if breadcrum ~= nil then
+            --       return breadcrum
+            --     else
+            --       return ""
+            --     end
+            --   end,
+            -- },
+          },
+          lualine_b = {},
+          lualine_c = {},
+          lualine_x = {},
+          lualine_y = {},
+          lualine_a = {
           },
         },
         inactive_winbar = {

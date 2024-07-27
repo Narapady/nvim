@@ -2,11 +2,6 @@ return {
   -- multi-select, keymap: ctrl-n
   { "mg979/vim-visual-multi", event = "BufReadPre" },
 
-  -- color brackets
-  {
-    "HiPhish/nvim-ts-rainbow2",
-    event = "BufReadPre",
-  },
   -- show color on Hex color code
   {
     "NvChad/nvim-colorizer.lua",
@@ -46,7 +41,7 @@ return {
     config = true,
     -- stylua: ignore
     keys = {
-      {";t", "<cmd>TodoTelescope<cr>", desc = "Todo" },
+      { ";t", "<cmd>TodoTelescope<cr>", desc = "Todo" },
     },
   },
   {
@@ -88,10 +83,10 @@ return {
       "TmuxNavigatePrevious",
     },
     keys = {
-      { "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
-      { "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
-      { "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
-      { "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
+      { "<c-h>",  "<cmd><C-U>TmuxNavigateLeft<cr>" },
+      { "<c-j>",  "<cmd><C-U>TmuxNavigateDown<cr>" },
+      { "<c-k>",  "<cmd><C-U>TmuxNavigateUp<cr>" },
+      { "<c-l>",  "<cmd><C-U>TmuxNavigateRight<cr>" },
       { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
     },
   },
