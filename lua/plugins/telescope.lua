@@ -21,7 +21,7 @@ return {
       path_display = { "smart" },
       prompt_position = "top",
       prompt_prefix = "  ",
-      selection_caret = "👉",
+      selection_caret = "󰅂 ",
       sorting_strategy = "ascending",
       vimgrep_arguments = {
         "rg",
@@ -77,6 +77,8 @@ return {
       { ";r", "<cmd>Telescope live_grep<cr>",                 desc = "Live Grep" },
       { ";d", "<cmd>Telescope diagnostics<cr>",               desc = "Diagnostics" },
       { ";s", "<cmd>Telescope lsp_document_symbols<cr>",      desc = "Document Symbols" },
+      { ";g", "<cmd>Telescope git_bcommits<cr>",              desc = "Document Symbols" },
+      { ";c", "<cmd>Telescope commands<cr>",                  desc = "Commands" },
     }
   end,
 }
