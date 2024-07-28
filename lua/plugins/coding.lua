@@ -1,4 +1,36 @@
 return {
+  {
+    "robitx/gp.nvim",
+    config = function()
+      local conf = {
+        -- For customization, refer to Install > Configuration in the Documentation/Readme
+        openai_api_key = os.getenv("OPENAI_API_KEY"),
+        cmd_prefix = "Gp",
+        agents = {
+          {
+            name = "ChatGPT4o",
+            chat = true,
+            command = false,
+            -- string with model name or table with model name and parameters
+            model = { model = "gpt-4o", temperature = 1.1, top_p = 1 },
+            -- system prompt (use this to specify the persona/role of the AI)
+            system_prompt = require("gp.defaults").chat_system_prompt,
+          },
+        },
+        chat_conceal_model_params = true,
+        vim.keymap.set("n", "<leader>al", "<cmd>GpChatToggle vsplit<CR>", { silent = true, desc = "Chat Toggle" }),
+        vim.keymap.set("n", "<leader>ar", "<cmd>GpChatRespond<CR>", { silent = true, desc = "Chat Response" }),
+        vim.keymap.set("n", "<leader>as", "<cmd>GpChatStop<CR>", { silent = true, desc = "Chat Stop" }),
+        vim.keymap.set("n", "<leader>ad", "<cmd>GpChatDelete<CR>", { silent = true, desc = "Chat Delete" }),
+        vim.keymap.set("n", "<leader>an", "<cmd>GpChatNew vsplit<CR>", { silent = true, desc = "Chat New" }),
+        vim.keymap.set({ "n", "v", "i", "x" }, "<leader>ap", ":'<,'>GpChatPaste vsplit<CR>",
+          { silent = true, desc = "Chat Paste" })
+      }
+      require("gp").setup(conf)
+
+      -- Setup shortcuts here (see Usage > Shortcuts in the Documentation/Readme)
+    end,
+  },
   -- multi-select, keymap: ctrl-n
   { "mg979/vim-visual-multi", event = "BufReadPre" },
 
