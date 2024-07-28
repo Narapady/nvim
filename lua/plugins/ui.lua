@@ -115,22 +115,22 @@ return {
         tabline = {},
         winbar = {
           lualine_z = {
-            { "mode", color = { fg = "#9ECE6A" } },
-            { "location", color = { fg = "#F7768E" } },
-            { "progress", color = { fg = "#0db9d7" } },
-            { "filetype", icon_only = false, colored = true },
-            { "filename", colored = true },
-            { "branch", color = { fg = "#BB9AF7" }, icon = "󰘬" },
-            {
-              "diff",
-              colored = true, -- Displays a colored diff status if set to true
-              symbols = { added = " ", modified = " ", removed = " " }, -- Changes the symbols used by the diff.
-            },
             {
               "diagnostics",
               sources = { "nvim_diagnostic" },
               symbols = { error = " ", warn = " ", info = " " },
             },
+            { "filetype", icon_only = false, colored = true },
+            { "filename", colored = true, path = 4 },
+            { "branch", color = { fg = "#ff5ea0" }, icon = "󰘬" },
+            {
+              "diff",
+              colored = true, -- Displays a colored diff status if set to true
+              symbols = { added = " ", modified = " ", removed = " " }, -- Changes the symbols used by the diff.
+            },
+            { "mode",     color = { fg = "#bd5eff" } },
+            { "location", color = { fg = "#ff6e5e" } },
+            { "progress", color = { fg = "#5ea1ff" } },
             -- {
             --   function()
             --     local breadcrum = require("lspsaga.symbol.winbar").get_bar()
