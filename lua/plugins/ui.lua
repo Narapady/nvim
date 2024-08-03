@@ -122,15 +122,15 @@ return {
             },
             { "filetype", icon_only = false, colored = true },
             { "filename", colored = true, path = 4 },
-            { "branch", color = { fg = "#ff5ea0" }, icon = "󰘬" },
+            { "branch", color = { fg = "#bb9af7" }, icon = "󰘬" },
             {
               "diff",
               colored = true, -- Displays a colored diff status if set to true
               symbols = { added = " ", modified = " ", removed = " " }, -- Changes the symbols used by the diff.
             },
-            { "mode",     color = { fg = "#bd5eff" } },
-            { "location", color = { fg = "#ff6e5e" } },
-            { "progress", color = { fg = "#5ea1ff" } },
+            { "mode",     color = { fg = "#5fd6be" } },
+            { "location", color = { fg = "#e0af68" } },
+            { "progress", color = { fg = "#0db9d7" } },
             -- {
             --   function()
             --     local breadcrum = require("lspsaga.symbol.winbar").get_bar()

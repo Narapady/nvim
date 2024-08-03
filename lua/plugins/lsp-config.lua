@@ -103,7 +103,9 @@ return {
             python = {
               analysis = {
                 typeCheckingMode = "off",
-                diagnosticMode = "off",
+                diagnosticMode = "OpenFilesOnly",
+                autoSearchPaths = true,
+                useLibraryCodeForTypes = true,
               },
             },
           },
@@ -120,6 +122,10 @@ return {
         -- end,
         -- Specify * to use this function as a fallback for any server
         -- ["*"] = function(server, opts) end,
+        -- pyright = function(_, opts)
+        --   require("pyright").setup({ server = opts })
+        --   return true
+        -- end
       },
     }
     return ret

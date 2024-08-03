@@ -136,6 +136,7 @@ return {
   {
     "catppuccin/nvim",
     name = "catppuccin",
+    event = "VeryLazy",
     lazy = false,
     priority = 1000,
     config = function()
@@ -170,34 +171,6 @@ return {
             surface2 = "#4d4d4d",
             surface1 = "#404040",
             surface0 = "#292929",
-            base = "#1d2224",
-            mantle = "#1d2224",
-            crust = "#1f2223",
-          },
-          frappe = {
-            rosewater = "#eb7a73",
-            flamingo = "#eb7a73",
-            red = "#eb7a73",
-            maroon = "#eb7a73",
-            pink = "#e396a4",
-            mauve = "#e396a4",
-            peach = "#e89a5e",
-            yellow = "#E7B84C",
-            green = "#7cb66a",
-            teal = "#99c792",
-            sky = "#99c792",
-            sapphire = "#99c792",
-            blue = "#8dbba3",
-            lavender = "#8dbba3",
-            text = "#f1e4c2",
-            subtext1 = "#e5d5b1",
-            subtext0 = "#c5bda3",
-            overlay2 = "#b8a994",
-            overlay1 = "#a39284",
-            overlay0 = "#656565",
-            surface2 = "#5d5d5d",
-            surface1 = "#505050",
-            surface0 = "#393939",
             base = "#1d2224",
             mantle = "#1d2224",
             crust = "#1f2223",
@@ -528,7 +501,7 @@ return {
         styles = {
           bold = true,
           italic = false,
-          transparency = true,
+          transparency = false,
         },
       })
     end,
@@ -580,20 +553,9 @@ return {
     end,
   },
   {
-    "folke/styler.nvim",
-    priority = 1000,
-    config = function()
-      require("styler").setup({
-        themes = {
-          markdown = { colorscheme = "tokyonight" },
-        },
-      })
-    end,
-  },
-  {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "cyberdream",
+      colorscheme = "tokyonight",
     },
   },
 }

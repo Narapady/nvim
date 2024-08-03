@@ -75,9 +75,9 @@ return {
       { ";b", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Fine in Current Buffer" },
       { ";;", "<cmd>Telescope buffers<cr>",                   desc = "Opened Buffers" },
       { ";r", "<cmd>Telescope live_grep<cr>",                 desc = "Live Grep" },
+      { ";s", "<cmd>Telescope grep_string<cr>",               desc = "Search Sting under Cursor" },
       { ";d", "<cmd>Telescope diagnostics<cr>",               desc = "Diagnostics" },
-      { ";s", "<cmd>Telescope lsp_document_symbols<cr>",      desc = "Document Symbols" },
-      { ";g", "<cmd>Telescope git_bcommits<cr>",              desc = "Document Symbols" },
+      { ";g", "<cmd>Telescope git_files<cr>",                 desc = "Find Git Files" },
       { ";c", "<cmd>Telescope commands<cr>",                  desc = "Commands" },
     }
   end,
