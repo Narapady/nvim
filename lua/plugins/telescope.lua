@@ -6,6 +6,13 @@ return {
       "nvim-telescope/telescope-fzf-native.nvim",
       build = "make",
     },
+    {
+      "prochri/telescope-all-recent.nvim",
+      dependencies = {
+        "kkharji/sqlite.lua",
+      },
+      opts = {},
+    }
   },
   opts = {
     defaults = {
@@ -77,8 +84,6 @@ return {
       { ";r", "<cmd>Telescope live_grep<cr>",                 desc = "Live Grep" },
       { ";s", "<cmd>Telescope grep_string<cr>",               desc = "Search Sting under Cursor" },
       { ";d", "<cmd>Telescope diagnostics<cr>",               desc = "Diagnostics" },
-      { ";g", "<cmd>Telescope git_files<cr>",                 desc = "Find Git Files" },
-      { ";c", "<cmd>Telescope commands<cr>",                  desc = "Commands" },
     }
   end,
 }

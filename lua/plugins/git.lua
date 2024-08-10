@@ -10,8 +10,8 @@ return {
           vim.keymap.set(mode, l, r, { buffer = buffer, desc = desc })
         end
 
-      -- stylua: ignore start
-      map("n", ";h", gs.preview_hunk_inline, "Preview Hunk Inline")
+        -- stylua: ignore start
+        map("n", ";h", gs.preview_hunk_inline, "Preview Hunk Inline")
       end,
     },
   },
@@ -28,8 +28,11 @@ return {
     },
     opts = {
       file_panel = {
-        position = "bottom",
-        height = 20,
+        win_config = {
+          position = "bottom",
+          height = 20,
+
+        }
       },
       hooks = {
         view_opened = function()
@@ -59,9 +62,30 @@ return {
       },
     },
     keys = {
-      { "<leader>gd", "<cmd>DiffviewOpen<cr>", desc = "Diff View Open" },
-      { "<leader>gD", "<cmd>DiffviewClose<cr>", desc = "Diff View Close" },
+      { "<leader>gd", "<cmd>DiffviewOpen<cr>",        desc = "Diff View Open" },
+      { "<leader>gD", "<cmd>DiffviewClose<cr>",       desc = "Diff View Close" },
       { "<leader>gh", "<cmd>DiffviewFileHistory<cr>", desc = "Diff View File History" },
     },
   },
+  {
+    'isakbm/gitgraph.nvim',
+    dependencies = { 'sindrets/diffview.nvim' },
+    ---@type I.GGConfig
+    opts = {
+      symbols = {
+        merge_commit = 'M',
+        commit = '*',
+      },
+      format = {
+        timestamp = '%H:%M:%S %d-%m-%Y',
+        fields = { 'hash', 'timestamp', 'author', 'branch_name', 'tag' },
+      },
+    },
+    init = function()
+      vim.keymap.set('n', ';g', function()
+        require('gitgraph').draw({}, { all = true, max_count = 5000 })
+      end, { desc = 'new git graph' })
+    end,
+  },
+
 }

@@ -1,3 +1,11 @@
+-- -- Disable autoformat for python files
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = { "python" },
+  callback = function()
+    vim.b.autoformat = false
+  end,
+})
+
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
   callback = function()
     vim.cmd("set formatoptions-=cro")

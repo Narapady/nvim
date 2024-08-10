@@ -59,9 +59,9 @@ return {
         local buffer = {
           { get_git_diff(props) },
           { get_diagnostic_label(props) },
-          { ft_icon, guifg = ft_color },
+          { ft_icon,                    guifg = ft_color },
           { " " },
-          { filename, gui = modified },
+          { filename,                   gui = modified },
         }
         return buffer
       end,

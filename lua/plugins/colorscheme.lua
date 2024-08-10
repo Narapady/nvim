@@ -460,8 +460,6 @@ return {
           end,
         },
       })
-
-      -- vim.api.nvim_command("colorscheme catppuccin-frappe")
     end,
   },
 
@@ -498,11 +496,35 @@ return {
     priority = 1000,
     config = function()
       require("rose-pine").setup({
+        highlight_groups = {
+          -- borderless telesecope
+          -- TelescopeBorder = { fg = "overlay", bg = "surface" },
+          -- TelescopeNormal = { fg = "subtle", bg = "surface" },
+          -- TelescopeSelection = { fg = "text", bg = "highlight_med" },
+          -- TelescopeSelectionCaret = { fg = "love", bg = "highlight_med" },
+          -- TelescopeMultiSelection = { fg = "text", bg = "highlight_high" },
+          --
+          -- TelescopeTitle = { fg = "base", bg = "love" },
+          -- TelescopePromptTitle = { fg = "base", bg = "pine" },
+          -- TelescopePreviewTitle = { fg = "base", bg = "iris" },
+          --
+          -- TelescopePromptNormal = { fg = "text", bg = "surface" },
+          -- TelescopePromptBorder = { fg = "surface", bg = "surface" },
+
+          -- transparent telescope
+          TelescopeBorder = { fg = "highlight_high", bg = "none" },
+          TelescopeNormal = { bg = "none" },
+          TelescopePromptNormal = { bg = "none" },
+          TelescopeResultsNormal = { fg = "subtle", bg = "none" },
+          TelescopeSelection = { fg = "text", bg = "base" },
+          TelescopeSelectionCaret = { fg = "rose", bg = "rose" },
+        },
         styles = {
           bold = true,
           italic = false,
           transparency = false,
         },
+        dark_variant = "main",
       })
     end,
   },
@@ -555,7 +577,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "tokyonight",
+      colorscheme = "rose-pine",
     },
   },
 }

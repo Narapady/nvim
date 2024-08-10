@@ -5,6 +5,16 @@ return {
     keys = { "<leader>T", "<cmd>TransparentToggle<CR>", desc = "Toggle Transparent" },
   },
   {
+    "akinsho/bufferline.nvim",
+    opts = {
+      options = {
+        mode = "tabs",
+        show_buffer_close_icons = false,
+        show_close_icon = false,
+      },
+    },
+  },
+  {
     "folke/noice.nvim",
     opts = function(_, opts)
       table.insert(opts.routes, {
@@ -75,88 +85,5 @@ return {
     keys = {
       { ";e", "<cmd>Yazi<CR>", desc = "Toggle Yazi" },
     },
-  },
-  {
-    "nvim-lualine/lualine.nvim",
-    enabled = true,
-    dependencies = { "nvim-tree/nvim-web-devicons", "nvimdev/lspsaga.nvim" },
-    opts = {},
-    config = function()
-      require("lualine").setup({
-        options = {
-          icons_enabled = true,
-          theme = {
-            normal = { c = { fg = "#00000000", bg = "#00000000" } },
-          },
-          component_separators = { left = " ", right = "" },
-          section_separators = { left = " ", right = "" },
-          disabled_filetypes = {
-            statusline = {},
-            winbar = {},
-          },
-          ignore_focus = {},
-          always_divide_middle = true,
-          globalstatus = false,
-          refresh = {
-            statusline = 1000,
-            tabline = 1000,
-            winbar = 1000,
-          },
-        },
-        inactive_section = {
-          lualine_a = {},
-          lualine_b = {},
-          lualine_c = {},
-          lualine_x = {},
-          lualine_y = {},
-          lualine_z = {},
-        },
-        sections = {},
-        tabline = {},
-        winbar = {
-          lualine_z = {
-            {
-              "diagnostics",
-              sources = { "nvim_diagnostic" },
-              symbols = { error = " ", warn = " ", info = " " },
-            },
-            { "filetype", icon_only = false, colored = true },
-            { "filename", colored = true, path = 4 },
-            { "branch", color = { fg = "#bb9af7" }, icon = "󰘬" },
-            {
-              "diff",
-              colored = true, -- Displays a colored diff status if set to true
-              symbols = { added = " ", modified = " ", removed = " " }, -- Changes the symbols used by the diff.
-            },
-            { "mode",     color = { fg = "#5fd6be" } },
-            { "location", color = { fg = "#e0af68" } },
-            { "progress", color = { fg = "#0db9d7" } },
-            -- {
-            --   function()
-            --     local breadcrum = require("lspsaga.symbol.winbar").get_bar()
-            --     if breadcrum ~= nil then
-            --       return breadcrum
-            --     else
-            --       return ""
-            --     end
-            --   end,
-            -- },
-          },
-          lualine_b = {},
-          lualine_c = {},
-          lualine_x = {},
-          lualine_y = {},
-          lualine_a = {
-          },
-        },
-        inactive_winbar = {
-          lualine_x = {
-            { "filetype", icon_only = true, colored = true },
-            { "filename" },
-          },
-        },
-        extensions = {},
-      })
-    end,
   },
 }
